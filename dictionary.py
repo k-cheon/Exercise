@@ -79,3 +79,42 @@ pythons.update(others)
 print(pythons)
 pythons = {}
 print(pythons)
+
+# 항목 얻기: [key]
+pythons = {
+    'Champman': 'Graham',
+    'Cleese': 'John',
+    'Idle': 'Eric',
+    'Jones': 'Terry',
+    'Palin': 'Michael',
+}
+
+print(pythons['Cleese'])
+print(pythons.get('Marx', 'Not a member'))
+
+# 모든 키 얻기: keys()
+signals = {'green': 'go', 'yellow': 'go faster', 'red': 'smile for the camera'}
+print(signals)
+print(signals.keys())
+print(list(signals.keys()))
+
+# 모든 값 얻기: values()
+print(list(signals.values()))
+
+# 모든 쌍의 키-값 얻기: items()
+print(list(signals.items()))
+
+# 할당: =, 복사: copy()
+print("\n할당 =")
+save_signals = signals
+print(save_signals)
+signals['blue'] = 'confuse everyone'
+print(save_signals)
+
+print("\ncopy()")
+signals = {'green': 'go', 'yellow': 'go faster', 'red': 'smile for the camera'}
+original_signals = signals.copy()
+print(original_signals)
+signals['blue'] = 'confuse everyone'
+print(signals)
+print(original_signals)
