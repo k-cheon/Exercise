@@ -108,3 +108,94 @@ print(marxes)
 print("\nI'm going to index('Chico') ...")
 marxes.index('Chico')
 print(marxes.index('Chico'))
+
+# 존재 여부 확인하기: in
+print('Groucho' in marxes)
+print('Bob' in marxes)
+
+# 값 세기: count()
+marxes = ['Groucho', 'Chico', 'Harpo', 'Zeppo']
+print(marxes)
+print("I'm going to count('Harpo') ...")
+print(marxes.count('Harpo'))
+print("I'm going to count('Bob') ...")
+print(marxes.count('Bob'))
+
+# 문자열로 변환하기: join()
+print("\nI'm going to join(marxes) ...")
+joined_string = ', '.join(marxes)
+print("\n" + joined_string)
+
+friends = ['Groucho', 'Chico', 'Harpo']
+separator = ' * '
+joined = separator.join(friends)
+print("\nNow friends is:")
+print(friends)
+print("\nI'm going to join friends with ' * '")
+print(joined)
+print("Again split() it")
+separated = joined.split(separator)
+print(separated)
+print(separated == friends)
+
+# 정렬: sort()
+# sort()는 리스트 자체를 내부적으로 정렬한다.
+# sorted()는 리스트의 정렬된 복사본을 반환한다.
+
+print("\nsort() and sorted()")
+marxes = ['Groucho', 'Chico', 'Harpo', 'Zeppo']
+print(marxes)
+
+sorted_marxes = sorted(marxes)
+print("sorted marxes")
+print(sorted_marxes)
+print("original marxes")
+print(marxes)
+
+print("\nI'm going to sort(marxes) ...")
+marxes.sort()
+print(marxes)
+
+print("\nI'm going to sort() numbers")
+numbers = [2, 1, 4.0, 3]
+print(numbers)
+numbers.sort()
+print(numbers)
+numbers.sort(reverse=True)
+print(numbers)
+
+# 항목 개수 얻기: len()
+marxes = ['Groucho', 'Chico', 'Harpo', 'Zeppo']
+print(len(marxes))
+
+# 할당: =, 복사: copy()
+# 하나의 리스트를 변수 두 곳에 할당했을 경우, 한 리스트를 변경하면 다른 리스트도 변경된다.
+# 복사를 한 경우에는 적용되지 않는다.
+
+print("\n---- '=', copy()")
+a = [1, 2, 3]
+print(a)
+print("a를 b에 할당하고 b룰 출력")
+b = a
+print(b)
+print("a[0] 값을 변경한 후 a와 b를 출력")
+a[0] = 'surprise'
+print(a)
+print(b)
+print("b[0]값을 변경하고 a와 b를 출력")
+b[0] = 'I hate surprise'
+print(a)
+print(b)
+
+# 할당이 아니라 복사한 경우
+print("\n복사한 경우에는 하나의 값을 변경해도 영향을 받지 않는다.")
+a = [1, 2, 3]
+b = a.copy()
+c = list(a)
+d = a[:]
+
+a[0] = 'Integer lists are boring'
+print(a)
+print(b)
+print(c)
+print(d)
